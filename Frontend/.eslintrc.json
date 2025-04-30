@@ -1,0 +1,67 @@
+{
+	"env": {
+		"browser": true,
+		"es2021": true
+	},
+	"extends": [
+		"eslint:recommended",
+		"plugin:react/recommended",
+		"airbnb",
+		"prettier",
+		"plugin:react/jsx-runtime",
+		"plugin:react-hooks/recommended",
+		"plugin:import/react"
+	],
+	"parserOptions": {
+		"ecmaVersion": "latest",
+		"sourceType": "module"
+	},
+	"plugins": ["react"],
+
+	"rules": {
+		"react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+		"import/prefer-default-export": "off",
+		"react-hooks/rules-of-hooks": "error",
+		"react-hooks/exhaustive-deps": "warn",
+
+		"react/function-component-definition": [
+			0,
+			{
+				"namedComponents": "function-declaration",
+				"unnamedComponents": "function-expression"
+			}
+		],
+		"arrow-body-style": "off",
+		"import/no-unresolved": [0, { "caseSensitive": false }],
+		"react/no-unstable-nested-components": [
+			"off",
+			{
+				"allowAsProps": true,
+				"customValidators": [] /* optional array of validators used for propTypes validation */
+			}
+		],
+		"react/jsx-props-no-spreading": [
+			0,
+			{
+				"html": "ignore",
+				"custom": "ignore",
+				"explicitSpread": "ignore"
+			}
+		],
+		"react/forbid-prop-types": [
+			0,
+			{
+				"forbid": ["any"],
+				"checkContextTypes": true,
+				"checkChildContextTypes": true
+			}
+		],
+		"jsx-a11y/aria-role": [
+			2,
+			{
+				"allowedInvalidRoles": ["text"],
+				"ignoreNonDOM": true
+			}
+		]
+	}
+}

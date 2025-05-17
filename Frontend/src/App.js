@@ -10,10 +10,11 @@ import { Footer } from './common/components/footer';
 import { Navbar } from './common/components/navbar';
 import {fetchPorfolioMessage} from "./services/Api";
 
+
 const App = () => {
 	const [message, setMessage] = useState('');
 
-	const Home = lazy(() => import('./common/components'));
+	const Home = lazy(() => import('./MainLayout'));
 	const NoMatch = lazy(() => import('./common/components/noMatch'));
 
 	const ElementSuspense = (Children) => (
@@ -36,7 +37,7 @@ const App = () => {
 		<>
 			<Navbar />
 			<Routes>
-				<Route element={ElementSuspense(<Home message={message} />)}
+				<Route element={ElementSuspense(<Home/>)}
 							  index  />
 				<Route path="*" element={ElementSuspense(<NoMatch />)} />
 			</Routes>
